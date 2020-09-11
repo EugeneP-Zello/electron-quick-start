@@ -14,9 +14,23 @@
     "tutorial",
     "demo"
   ],
+  "iohook": {
+    "targets": [
+      "electron-80"
+    ],
+    "platforms": [
+      "darwin"
+    ],
+    "arches": [
+      "x64"
+    ]
+  },
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^10.1.1"
+    "electron": "9.2.1"
+  },
+  "dependencies": {
+    "iohook": "^0.6.6"
   }
 }

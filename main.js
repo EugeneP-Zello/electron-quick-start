@@ -1,7 +1,11 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
-
+const {app, BrowserWindow} = require('electron');
+const path = require('path');
+const runtime = process.versions['electron'] ? 'electron' : 'node';
+const essential = runtime + '-v' + process.versions.modules + '-' + process.platform + '-' + process.arch;
+const modulePath = path.join(__dirname, 'builds', essential, 'build', 'Release', 'iohook.node');
+console.info('The iohook path is:', modulePath);
+const iohook = require('iohook');
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
